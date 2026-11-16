@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+  Dedicated to the Public Domain under CC0 1.0 Universal.
+  You can copy, modify, distribute, and use this code for any purpose,
+  including commercial projects, without permission or attribution.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOUR ART COMPANY NAME</title>
+  <style>
+    /* =========================================
+       1. EASY COLOR & FONT CUSTOMIZATION
+       Edit the values below to change your site's look
+       ========================================= */
+    :root {
+      --bg-color: #faf9f6;       /* Page background */
+      --card-bg: #ffffff;        /* Card background */
+      --text-main: #1a1a1a;      /* Primary text */
+      --text-muted: #555555;     /* Secondary text */
+      --accent: #b85d3b;         /* Buttons & highlights */
+      --border-color: #e2dfd7;   /* Subtle borders */
+      --font-heading: Georgia, serif;
+      --font-body: system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header & Navigation */
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg-color);
+      z-index: 10;
+    }
+
+    .nav-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Hero Banner */
+    .hero {
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: normal;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--text-main);
+      color: #ffffff;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid var(--text-main);
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Section Headings */
+    section {
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-weight: normal;
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Artwork Gallery Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      background-color: #eae6df;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-details {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .link-accent {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* About & Contact Two-Column Layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Simple Contact Box */
+    .contact-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+    }
+
+    .contact-box p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <header>
+    <div class="nav-wrap">
+      <a href="#" class="brand">YOUR COMPANY NAME</a>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <div class="hero">
+      <h1>Your Main Headline Goes Here</h1>
+      <p>Write a short sentence describing your art studio, gallery, or creative work.</p>
+      <a href="#gallery" class="btn">View Collection</a>
+    </div>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery">
+      <h2>Featured Artwork</h2>
+      <div class="grid">
+
+        <!-- ARTWORK ITEM 1 (Copy this block to add more items) -->
+        <div class="card">
+          <!-- Replace src="artwork1.jpg" with your actual image filename in GitHub -->
+          <img src="artwork1.jpg" alt="Artwork 1 description" />
+          <div class="card-body">
+            <div class="card-title">Artwork Title One</div>
+            <div class="card-details">Medium &bull; Size (e.g. 60 x 80 cm)</div>
+            <div class="card-bottom">
+              <span>Price or "Available"</span>
+              <a href="mailto:you@://example.com: Artwork Title One" class="link-accent">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARTWORK ITEM 2 -->
+        <div class="card">
+          <img src="artwork2.jpg" alt="Artwork 2 description" />
+          <div class="card-body">
+            <div class="card-title">Artwork Title Two</div>
+            <div class="card-details">Medium &bull; Size (e.g. 90 x 120 cm)</div>
+            <div class="card-bottom">
+              <span>Price or "Available"</span>
+              <a href="mailto:you@://example.com: Artwork Title Two" class="link-accent">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARTWORK ITEM 3 -->
+        <div class="card">
+          <img src="artwork3.jpg" alt="Artwork 3 description" />
+          <div class="card-body">
+            <div class="card-title">Artwork Title Three</div>
+            <div class="card-details">Medium &bull; Size (e.g. 50 x 50 cm)</div>
+            <div class="card-bottom">
+              <span>Price or "Sold"</span>
+              <a href="mailto:you@://example.com: Artwork Title Three" class="link-accent">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT & CONTACT SECTION -->
+    <section id="about">
+      <div class="two-col">
+        <div>
+          <h2>About Us</h2>
+          <p style="margin-bottom: 1rem;">
+            Write your studio story, artistic philosophy, or company background here. Explain what makes your artwork unique and how collectors or clients can work with you.
+          </p>
+          <p style="color: var(--text-muted);">
+            Mention commissions, framing options, or international shipping details here.
+          </p>
+        </div>
+
+        <div id="contact" class="contact-box">
+          <h2>Get in Touch</h2>
+          <p>Interested in acquiring a piece or commissioning custom artwork? Reach out directly via email or social media.</p>
+          <p><strong>Email:</strong> you@example.com</p>
+          <p><strong>Location:</strong> Your City, Country</p>
+          <p><strong>Instagram:</strong> @yourhandle</p>
+          <a href="mailto:you@example.com" class="btn" style="margin-top: 0.5rem;">Email Studio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 YOUR COMPANY NAME. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
