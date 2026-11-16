@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><h2 style="text-align: center;">BK Art's</h2></title>
+  <title>BK Art's</title>
   <style>
     /* =========================================
        1. EASY COLOR & FONT CUSTOMIZATION
@@ -146,6 +146,14 @@
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
+      position: relative;
+      z-index: 1;
+      transition: z-index 0s 0.35s;
+    }
+
+    .card:hover {
+      z-index: 20;
+      transition: z-index 0s;
     }
 
     .card img {
@@ -154,6 +162,13 @@
       object-fit: cover;
       display: block;
       background-color: #eae6df;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    /* Pops the picture outward over the card and surrounding grid */
+    .card:hover img {
+      transform: scale(1.15);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
     }
 
        /* Makes wide artworks span across 2 columns cleanly */
@@ -247,7 +262,7 @@
     <div class="nav-wrap">
       <a href="#" class="brand">
         <img src="BK%20WEB/BKlogo.jpg" alt="BK Art Logo" />
-        <span>BK Art</span>
+        <span><h2 style="text-align: center;">BK Art's</h2></span>
       </a>
       <nav>
         <a href="#gallery">Gallery</a>
