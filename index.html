@@ -107,6 +107,14 @@
       margin: 0 auto 2rem;
       font-size: 1.1rem;
     }
+    .hero-image {
+      display: block;
+      margin: 0 auto 2rem auto; /* Centers the image and adds space before the headline */
+      max-width: 480px;         /* Adjust this number to make the picture larger or smaller */
+      width: 100%;              /* Keeps it responsive on mobile phones */
+      height: auto;
+    }
+
 
     .btn {
       display: inline-block;
@@ -262,7 +270,7 @@
     <div class="nav-wrap">
       <a href="#" class="brand">
         <img src="BK%20WEB/BKlogo.jpg" alt="BK Art Logo" />
-        <span><h2 style="text-align: center;">BK Art's</h2></span>
+        <span>BK Art's</span>
       </a>
       <nav>
         <a href="#gallery">Gallery</a>
@@ -274,7 +282,8 @@
 
   <main>
     <!-- HERO SECTION -->
-    <div class="hero">
+       <div class="hero">
+      <img src="BK%20WEB/Hairbirddropout.jpg" alt="BK Art Raw Steel Sculpture" class="hero-image" />
       <h1>Where Raw Steel Meets Timeless Art.</h1>
       <p>Write a short sentence describing your art studio, gallery, or creative work.</p>
       <a href="#gallery" class="btn">View Collection</a>
