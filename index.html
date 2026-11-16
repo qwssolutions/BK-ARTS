@@ -156,10 +156,23 @@
       background-color: #eae6df;
     }
 
-   /* Makes the 5th artwork card taller vertically to fit the full image */
-    .card.tall-card img {
-      aspect-ratio: auto;
-      height: auto;
+       /* Makes wide artworks span across 2 columns cleanly */
+    .card.wide-card {
+      grid-column: span 2;
+    }
+
+    .card.wide-card img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .card.wide-card {
+        grid-column: span 1;
+      }
+      .card.wide-card img {
+        aspect-ratio: auto;
+      }
     }
 
     .card-body {
@@ -310,8 +323,8 @@
           </div>
         </div>
 
-               <!-- ARTWORK ITEM 5 -->
-        <div class="card tall-card">
+      <!-- ARTWORK ITEM 5 -->
+        <div class="card wide-card">
           <img src="BK%20WEB/Hairbirddropout.jpg" alt="Artwork 5 Hair Drop" />
           <div class="card-body">
             <div class="card-title">Let it be</div>
