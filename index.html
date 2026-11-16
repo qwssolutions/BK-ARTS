@@ -57,10 +57,19 @@
       align-items: center;
     }
 
-    .brand {
+        .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       font-family: var(--font-heading);
       font-size: 1.4rem;
       letter-spacing: 0.05em;
+    }
+
+    .brand img {
+      height: 40px;       /* Adjust this number to make your logo bigger or smaller */
+      width: auto;
+      display: block;
     }
 
     nav a {
@@ -215,9 +224,12 @@
 <body>
 
   <!-- TOP NAVIGATION -->
-  <header>
+   <header>
     <div class="nav-wrap">
-      <a href="#" class="brand">BK Art</a>
+      <a href="#" class="brand">
+        <img src="BK WEB/BKlogo.png" alt="BK Art Logo" />
+        <span>BK Art</span>
+      </a>
       <nav>
         <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
