@@ -82,6 +82,48 @@
       color: var(--accent);
     }
 
+        /* Hidden on desktop computers */
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--text-main);
+      padding: 0.25rem;
+    }
+
+    /* Shows 3-line dropdown ONLY on mobile phones (768px and smaller) */
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 1rem 1.75rem;
+        flex-direction: column;
+        gap: 0.9rem;
+        min-width: 170px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        z-index: 50;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        margin-left: 0;
+      }
+    }
+    
     /* Main Container */
     main {
       max-width: 1100px;
@@ -273,10 +315,11 @@
         <img src="BK%20WEB/BKlogo.jpg" alt="BK Art Logo" />
         <span style="position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap;">BK Art's</span>
       </a>
-      <nav>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+            <button class="menu-btn" onclick="document.getElementById('nav-menu').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+      <nav id="nav-menu">
+        <a href="#gallery" onclick="this.parentElement.classList.remove('open')">Gallery</a>
+        <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
+        <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
       </nav>
     </div>
   </header>
